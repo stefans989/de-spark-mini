@@ -1,0 +1,8 @@
+﻿user_id,email,country,signup_date
+1,ANA@EXAMPLE.COM,RS,2026-03-30
+2,bob@example.com,DE,2026-03-30
+2,bob@example.com,DE,2026-03-30
+3,invalid-email,US,2026-03-31
+4,  cathy@example.com  ,RS,2026-04-01
+,emptyid@example.com,RS,2026-04-01
+5,ed@example.com,XX,2026-04-01

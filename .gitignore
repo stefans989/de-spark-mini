@@ -1,0 +1,13 @@
+﻿# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Pytest
+.pytest_cache/
+
+# Spark output
+out/
+
+# Editor
+.vscode/
