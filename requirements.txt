@@ -1,2 +1,2 @@
 pyspark==3.5.3
-pytest>=7.4,<9
+pytest==8.4.2
