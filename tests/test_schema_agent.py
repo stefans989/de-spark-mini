@@ -1,20 +1,7 @@
-import os
-import sys
-
 import pytest
-from pyspark.sql import SparkSession
 
 from src.agents.schema_agent import validate
 from src.contracts.users_contract import users_contract
-
-
-@pytest.fixture(scope="module")
-def spark():
-    os.environ["PYSPARK_PYTHON"] = sys.executable
-    os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
-    session = SparkSession.builder.master("local[1]").appName("pytest-schema").getOrCreate()
-    yield session
-    session.stop()
 
 
 def test_missing_required_column_raises(spark):
@@ -37,18 +24,3 @@ def test_extra_column_raises_in_strict_mode(spark):
 
     with pytest.raises(ValueError, match="Extra columns not allowed in strict mode"):
         validate(df, users_contract)
-
-
-
-
-
-@pytest.fixture(scope="session")
-def spark():
-    spark = (
-        SparkSession.builder
-        .master("local[1]")
-        .appName("tests")
-        .getOrCreate()
-    )
-    yield spark
-    spark.stop()
