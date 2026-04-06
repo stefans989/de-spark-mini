@@ -11,3 +11,9 @@ out/
 
 # Editor
 .vscode/
+
+# Spark / Derby artifacts
+spark-warehouse/
+.spark-warehouse/
+metastore_db/
+derby.log
